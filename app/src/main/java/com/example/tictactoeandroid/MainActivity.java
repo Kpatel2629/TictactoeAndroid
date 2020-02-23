@@ -1,14 +1,19 @@
 package com.example.tictactoeandroid;
-
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.View;
+import android.widget.TextView;
 import android.os.Bundle;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements
+        View.OnClickListener {
 
 
     Button aButtons[][] = new Button[3][3];
+    int turn_count = 0;
+    TextView tvInfo;
+    Button buttonReset;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +28,21 @@ public class MainActivity extends AppCompatActivity {
         aButtons[2][0] = findViewById(R.id.b20);
         aButtons[2][1] = findViewById(R.id.b21);
         aButtons[2][2] = findViewById(R.id.b22);
+
+
+
+        aButtons[0][0].setOnClickListener(this);
+
+
+        //A button that reset the Game
+        buttonReset = (Button) findViewById(R.id.buttonReset);
+
+        tvInfo = (TextView) findViewById(R.id.tvInfo);
+    }
+
+    @Override
+    public void onClick(View view){
+
     }
 
 
